@@ -1,0 +1,16 @@
+import { Injectable } from '@angular/core';
+import {HttpClient} from '@angular/common/http'
+import { Posts } from './posts';
+
+@Injectable({
+  providedIn: 'root'
+})
+export class FreeapiService {
+
+  constructor(private http:HttpClient) { }
+
+  putPost(post:Posts){
+    const url='https://jsonplaceholder.typicode.com/posts/5';
+    return this.http.put<Posts>(url,post)
+  }
+}
