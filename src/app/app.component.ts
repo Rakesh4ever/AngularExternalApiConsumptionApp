@@ -12,6 +12,7 @@ export class AppComponent {
   title = 'Calling external API in Angular 14 : PUT,PATCH,DELETE - https://jsonplaceholder.typicode.com/posts';
   putPost: Posts = new Posts;
   patchPost:Posts=new Posts;
+  message!:string;
 
   ngOnInit(){
 
@@ -24,6 +25,11 @@ export class AppComponent {
 
     let patchPost1=new Posts();
     patchPost1.body='Patch method implemeted'
-    this.freeapiService.patchPost(patchPost1).subscribe(data=>this.patchPost=data)
+    this.freeapiService.patchPost(patchPost1).subscribe(data=>this.patchPost=data);
+
+    //Delete
+
+    this.freeapiService.deletePostById().subscribe(data=>this.message='Resource with Id-1 Delete Successfully')
   }
+
 }

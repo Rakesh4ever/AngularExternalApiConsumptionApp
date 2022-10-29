@@ -19,4 +19,9 @@ export class FreeapiService {
     return this.http.patch<Posts>(url,post)
 
   }
+
+  deletePostById(){
+    const url='https://jsonplaceholder.typicode.com/posts/1';
+    return this.http.delete(url);
+  }
 }
