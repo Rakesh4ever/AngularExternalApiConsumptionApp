@@ -9,7 +9,7 @@ import { Posts } from './posts';
 })
 export class AppComponent {
   constructor(private freeapiService:FreeapiService){}
-  title = 'AngularExternalApiConsumptionApp';
+  title = 'Calling external API in Angular 14 : PUT,PATCH,DELETE - https://jsonplaceholder.typicode.com/posts';
   putPost: Posts = new Posts;
 
   ngOnInit(){
