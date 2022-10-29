@@ -11,6 +11,7 @@ export class AppComponent {
   constructor(private freeapiService:FreeapiService){}
   title = 'Calling external API in Angular 14 : PUT,PATCH,DELETE - https://jsonplaceholder.typicode.com/posts';
   putPost: Posts = new Posts;
+  patchPost:Posts=new Posts;
 
   ngOnInit(){
 
@@ -19,6 +20,10 @@ export class AppComponent {
     putPost1.title='Angular api consumption';
     putPost1.body='PUT method geting implementation'
     putPost1.userId=1
-    this.freeapiService.putPost(putPost1).subscribe(data=>this.putPost=data)
+    this.freeapiService.putPost(putPost1).subscribe(data=>this.putPost=data);
+
+    let patchPost1=new Posts();
+    patchPost1.body='Patch method implemeted'
+    this.freeapiService.patchPost(patchPost1).subscribe(data=>this.patchPost=data)
   }
 }

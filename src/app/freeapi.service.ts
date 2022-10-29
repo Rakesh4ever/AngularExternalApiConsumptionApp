@@ -13,4 +13,10 @@ export class FreeapiService {
     const url='https://jsonplaceholder.typicode.com/posts/5';
     return this.http.put<Posts>(url,post)
   }
+
+  patchPost(post:Posts){
+    const url='https://jsonplaceholder.typicode.com/posts/5';
+    return this.http.patch<Posts>(url,post)
+
+  }
 }
